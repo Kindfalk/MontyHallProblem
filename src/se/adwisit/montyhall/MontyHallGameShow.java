@@ -66,16 +66,21 @@ public class MontyHallGameShow {
 		PuzzleBoard board = new PuzzleBoard();
 		MontyHallGameShow game1 = new MontyHallGameShow(player1, board);
 		Integer player1Winnings = game1.run(numberOfRuns);
-		String p1Text = "Player that never changes its mind";
-		System.out.println(p1Text + ": " + player1Winnings + " (" + 100*player1Winnings/numberOfRuns+"%)");
 		
 		
 		Player player2 = new Player(true);
 		MontyHallGameShow game2 = new MontyHallGameShow(player2, board);
 		Integer player2Winnings = game2.run(numberOfRuns);
 		String p2Text = "Player that always changes its mind";
-		System.out.println(p2Text + ": " + player2Winnings + " (" + 100*player2Winnings/numberOfRuns+"%)");
-		System.out.println("\nThe winner is: " + (player1Winnings > player2Winnings ? p1Text : p2Text));
+
+		System.out.println("\nTotal number of games: " + numberOfRuns);
+		
+		String p1Text = "Player that never changes its mind";
+		System.out.println(p1Text + " won: " + player1Winnings + " (" + 100*player1Winnings/numberOfRuns+"%)");
+
+		
+		System.out.println(p2Text + " won: " + player2Winnings + " (" + 100*player2Winnings/numberOfRuns+"%)");
+		System.out.println("\nThe winner is: " + (player1Winnings > player2Winnings ? p1Text : p2Text)+ "\n");
 		
 	}
 }
